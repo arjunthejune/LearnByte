@@ -1,0 +1,24 @@
+<main class="main-container">
+
+  <div class="left-sidebar">
+    <div class="padding-container">
+      <h1>GENERATE A DECK</h1>
+
+      <p>Generate a card below by entering a topic. You can enter a single word, a longer phrase, or a paragraph.</p>
+
+      <%= form_with url: "/decks/generate", method: :post do |form| %>
+        <%= form.label :topic %>
+        <%= form.text_field :topic %>
+        <%= form.submit "Generate", class: "dark-input" %>
+      <% end %>
+
+      <%= link_to "Cancel", decks_path, html_options = { class: "sidebar-link-button-dark" } %>
+
+    </div>
+  </div>
+
+  <div class="right-sidebar">
+    <div class="padding-container">
+    </div>
+  </div>
+</main>

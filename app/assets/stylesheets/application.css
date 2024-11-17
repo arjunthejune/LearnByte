@@ -1,0 +1,295 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+* {
+    font-family: "Host Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 1.2em;
+}
+
+p {
+    font-size: 21px;
+    margin-bottom: 28px;
+}
+
+.main-container {
+    height: 100%;
+}
+
+.padding-container {
+    margin: 120px 60px 120px 60px;
+}
+
+.left-sidebar {
+    float: left;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 600px;
+    background-color: #224;
+    color: white;
+}
+
+.right-sidebar {
+    margin-left: 600px;
+}
+
+.sidebar-link-button-dark, .sidebar-link-button-light {
+    display: inline-block;
+    border-radius: 8px;
+    border-color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    transition: 0.2s;
+    height: 20px;
+}
+
+.sidebar-link-button-dark {
+    background-color: transparent;
+    color: white !important;
+}
+
+.sidebar-link-button-light {
+    border-color: #448;
+    background-color: transparent;
+    color: #448 !important;
+}
+
+.sidebar-link-button-dark:hover {
+    cursor: pointer;
+    background-color: #fff !important;
+    color: #224 !important;
+}
+
+.sidebar-link-button-light:hover {
+    cursor: pointer;
+    border-color: #224;
+    background-color: #224 !important;
+    color: #fff !important;
+}
+
+input, textarea {
+    font-size: 18px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+}
+
+.dark-input, .light-input {
+    display: inline-block;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    transition: 0.2s;
+    height: 45px;
+}
+
+.dark-input:hover, .light-input:hover {
+    cursor: pointer;
+}
+
+.dark-input:hover {
+    cursor: pointer;
+    background-color: #fff !important;
+    color: #224 !important;
+}
+
+.light-input:hover {
+    cursor: pointer;
+    border-color: #224;
+    background-color: #224 !important;
+    color: #fff !important;
+}
+
+.dark-input {
+    display: inline-block;
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.light-input {
+    display: inline-block;
+    color: #000;
+    background-color: #ddd;
+}
+
+.light-text-input {
+    display: inline-block;
+    color: #000;
+    background-color: #efefef;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.card1, .card2, .card3, .card4 {
+    display: block;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    color: black !important;
+    transition: 0.4s;
+}
+
+.card1 {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    transform: rotate(5deg);
+    background-color: #ffdfe1;
+}
+
+.card4 {
+    position: absolute;
+    width: 280px;
+    height: 210px;
+    transform: rotate(-12deg);
+    background-color: #fff8df;
+}
+
+.card2 {
+    position: absolute;
+    width: 300px;
+    height: 210px;
+    transform: rotate(-5deg);
+    background-color: #cee2ff;
+}
+
+.card3 {
+    position: absolute;
+    width: 280px;
+    height: 160px;
+    transform: rotate(1deg);
+    background-color: #f6fffa;
+}
+
+.card3:hover {
+    transform: rotate(-4deg) translate(-5px, 2px);
+}
+.card4:hover {
+    transform: rotate(7deg) translate(-5px, 2px);
+}
+
+.card1:hover {
+    transform: rotate(4deg) translate(15px, 2px);
+}
+.card2:hover {
+    transform: rotate(-9deg) translate(-1px, -12px);
+}
+
+.flip-card {
+    top: -80px;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    perspective: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+}
+
+.button {
+    padding: 100px;
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+    color: #000;
+    background-color: #fff8df;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.flip-card:active .button {
+    background-color: #dffbff;
+    transform: rotateX(180deg);
+}
+
+.card-term, .card-definition {
+    font-size: 34px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0 1.5em;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+    width: 80%;
+}
+
+.card-definition {
+    transform: translate(-50%, -50%) rotateX(180deg);
+}
+
+.card-big1 {
+    transform: rotate(5deg);
+    background-color: #ffdfe1;
+}
+
+.card-big4 {
+    transform: rotate(-12deg);
+    background-color: #fff8df;
+}
+
+.card-big2 {
+    transform: rotate(-5deg);
+    background-color: #cee2ff;
+}
+
+.card-big3 {
+    transform: rotate(1deg);
+    background-color: #f6fffa;
+}

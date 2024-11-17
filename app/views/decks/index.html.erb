@@ -1,0 +1,38 @@
+<!-- <p style="color: green"><%= notice %></p> -->
+
+<% content_for :title, "Decks" %>
+
+<main class="main-container">
+
+  <div class="left-sidebar">
+    <div class="padding-container">
+      <h1>CARD DECKS</h1>
+
+      <p>You can insert card decks below, or generate one automatically by proving a topic. Existing card decks are listed to the right.</p>
+
+      <%= link_to "New deck", new_deck_path, html_options = { class: "sidebar-link-button-dark" } %>
+      <%= link_to "Generate deck", "/decks/generator", html_options = { class: "sidebar-link-button-dark" } %>
+    </div>
+  </div>
+
+  <div class="right-sidebar">
+    <div class="padding-container">
+      <div id="decks">
+        <% @decks.each do |deck| %>
+          <a href="<%= url_for deck %>" style="height: 350px;width:300px;display:block;margin-left:auto;margin-right:auto;">
+            <div class="<% if deck.id % 4 == 0 %>card1<% end %><% if deck.id % 4 == 1 %>card2<% end %><% if deck.id % 4 == 2 %>card3<% end %><% if deck.id % 4 == 3 %>card4<% end %>" style="z-index: 7;position: absolute;"></div>
+            <div class="<% if deck.id % 4 == 0 %>card2<% end %><% if deck.id % 4 == 1 %>card3<% end %><% if deck.id % 4 == 2 %>card4<% end %><% if deck.id % 4 == 3 %>card1<% end %>" style="z-index: 7;position: absolute;"></div>
+            <div class="<% if deck.id % 4 == 0 %>card3<% end %><% if deck.id % 4 == 1 %>card4<% end %><% if deck.id % 4 == 2 %>card1<% end %><% if deck.id % 4 == 3 %>card2<% end %>" style="z-index: 7;position: absolute;"></div>
+            <div class="<% if deck.id % 4 == 0 %>card4<% end %><% if deck.id % 4 == 1 %>card1<% end %><% if deck.id % 4 == 2 %>card2<% end %><% if deck.id % 4 == 3 %>card3<% end %>" style="z-index: 7;position: absolute;overflow: hidden;">
+              <h2 style="z-index: 1;position: relative;"><%= deck.title %></h2>
+              <p style="z-index: 1;position: relative;"><%= deck.description %></p>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+

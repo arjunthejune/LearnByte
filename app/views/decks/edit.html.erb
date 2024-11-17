@@ -1,0 +1,10 @@
+<% content_for :title, "Editing deck" %>
+<% content_for :sidebar_content_top do %>
+  <h1>EDIT DECK</h1>
+  <p>Please edit the deck title and description below, and edit cards for the deck on the right.</p>
+<% end %>
+<% content_for :sidebar_content_bottom do %>
+  <%= link_to "Cancel", @deck, html_options = { class: "sidebar-link-button-dark" } %>
+<% end %>
+
+<%= render "form", deck: @deck %>

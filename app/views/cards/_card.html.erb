@@ -1,0 +1,8 @@
+<li style="list-style: none">
+  <div class="flip-card">
+    <button class="button <% if card.id % 4 == 0 %>card-big1<% end %><% if card.id % 4 == 1 %>card-big2<% end %><% if card.id % 4 == 2 %>card-big3<% end %><% if card.id % 4 == 3 %>card-big4<% end %>">
+      <span class="card-term"><%= card.term %></span>
+      <span class="card-definition"><%= card.definition %></span>
+    </button>
+  </div>
+</li>

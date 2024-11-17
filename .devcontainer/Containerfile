@@ -1,0 +1,5 @@
+FROM docker.io/library/fedora:41
+
+RUN dnf -y group install development-tools ruby
+RUN dnf -y install sqlite libyaml-devel python pip
+RUN gem install rails:'~>8.0'

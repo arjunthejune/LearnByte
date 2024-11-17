@@ -1,0 +1,48 @@
+<%= form_with(model: deck) do |form| %>
+  <main class="main-container">
+    <div class="left-sidebar">
+      <div class="padding-container">
+
+          <%= content_for(:sidebar_content_top) || "Sidebar." %>
+          <%= form.label :title, style: "display: block" %>
+          <%= form.text_field :title %>
+          <%= form.label :description, style: "display: block" %>
+          <%= form.textarea :description %>
+          <%= form.submit "Save Deck", html_options = { class: "dark-input" } %>
+          <%= content_for(:sidebar_content_bottom) || "Sidebar." %>
+
+      </div>
+    </div>
+
+    <div class="right-sidebar">
+      <div class="padding-container">
+
+        <% if deck.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(deck.errors.count, "error") %> prohibited this deck from being saved:</h2>
+
+            <ul>
+              <% deck.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <h2>Cards:</h2>
+        <ul id="cards">
+          <%= form.fields_for :cards do |card_form| %>
+              <%= render "cards/form", form: card_form %>
+          <% end %>
+        </ul>
+
+        <%= form.submit "Add New Term to Deck",
+                        formaction: card_path(@deck.cards.size),
+                        formmethod: :post,
+                        formnovalidate: true,
+                        id: "add-card",
+                        class: "light-input" %>
+      </div>
+    </div>
+  </main>
+<% end %>

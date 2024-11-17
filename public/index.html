@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Host Grotesk", sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+        .top-of-page {
+            background-color: #224;
+            color: white;   
+            font-family: sans-serif;
+            text-align: center;
+            height:525px;
+            margin: 0;
+        }
+
+        .title {
+            font-size: 90px;
+            font-weight: 800;
+            padding-top: 90px;
+            margin: 0;
+        }
+
+        .description {
+            padding-top: 50px;
+            font-size: 30px;
+            padding-bottom: 10px;   
+            margin: 0;
+        }
+
+        #main-button {
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 12px;
+            width: 180px;
+            height: 30px;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: gold;
+        }
+
+
+
+        .main-section {
+          text-align: center;
+          max-width: 800px;
+          margin: auto;
+          font-family: sans-serif;
+          font-size: 24px;
+          padding-bottom: 100px;
+        }
+
+        .flip-button {
+          --col1: #ecb4ea;
+          --col2: #f6cfa6;
+          --col3: #000000;
+          top: -30px;
+          position: relative;
+          width: 450px;
+          height: 250px;
+          perspective: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 36px;
+        }
+
+        .flip-button .button {
+          appearance: none;
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          border-radius: 30px;
+          font-weight: bold;
+          color: #000;
+          text-transform: uppercase;
+          background-color: var(--col1);
+          border: none;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: 0.2s;
+          transform-style: preserve-3d;
+          width: 100%;
+        }
+
+        .flip-button:hover .button {
+          background-color: var(--col2);
+          cursor: pointer;
+          transform: rotateX(180deg);
+          transition: .2s;
+        }
+
+        .flip-button .text-front,
+        .flip-button .text-back {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          padding: 0 1.5em;
+          transform: translate(-50%, -50%);
+          backface-visibility: hidden;
+          width: 100%;
+          font-size: 32px;
+        }
+
+        .flip-button .text-back {
+          transform: translate(-50%, -50%) rotateX(180deg);
+        }
+        
+        .description-title {
+          font-size: 36px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="top-of-page">
+      <div class="title">
+            Welcome to LearnByte!
+      </div>
+      <div class = "description">
+            An innovative AI based flashcard app. 
+      </div>
+      <a href="/decks" id="main-button">
+            Start LearnByte
+      </a>
+    </div>
+    <div class="flip-button">
+      <button class="button button-front">
+        <span class="text-front">You prompt the topic</span>
+        <span class="text-back">It will create the deck for you</span>
+      </button>
+    </div>
+    <div class="main-section">
+      <p>
+        <br><strong class="description-title">Welcome to LearnByte:
+          <br>Your Ultimate Study Companion 
+        </strong>
+        <br>
+        <br>Transform the way you learn with LearnByte, the AI-powered flashcard app designed to make studying smarter, faster, and more effective. Whether you're preparing for exams, mastering a new language, or learning on the go, our app is tailored to help you succeed.
+
+
+      </p>
+    </div>
+</body>
+</html>

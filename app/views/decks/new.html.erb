@@ -1,0 +1,10 @@
+<% content_for :title, "New deck" %>
+<% content_for :sidebar_content_top do %>
+  <h1>NEW DECK</h1>
+  <p>Please enter a deck title and description below, and add cards to the deck to the right.</p>
+<% end %>
+<% content_for :sidebar_content_bottom do %>
+  <%= link_to "Cancel", decks_path, html_options = { class: "sidebar-link-button-dark" } %>
+<% end %>
+
+<%= render "form", deck: @deck %>

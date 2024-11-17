@@ -1,0 +1,16 @@
+<%= fields model: @deck do |form| %>
+  <%= form.fields_for :cards, child_index: params[:index] do |card_form| %>
+    <%= turbo_stream.replace "add-card" do %>
+      <%= form.submit "Add New Term to Deck",
+                      formaction: card_path(params[:index].to_i + 1),
+                      formmethod: :post,
+                      formnovalidate: true,
+                      id: "add-card",
+                      class: "light-input" %>
+    <% end %>
+
+    <%= turbo_stream.append "cards" do %>
+      <%= render "form", form: card_form %>
+    <% end %>
+  <% end %>
+<% end %>

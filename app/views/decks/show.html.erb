@@ -1,0 +1,25 @@
+<!--<p style="color: green"><%#= notice %></p>-->
+
+<main class="main-container">
+
+  <div class="left-sidebar">
+    <div class="padding-container">
+      <%= render @deck %>
+
+      <div>
+        <%= link_to "Edit this deck", edit_deck_path(@deck), html_options = { class: "sidebar-link-button-dark" } %>
+        <%= button_to "Delete this deck", @deck, method: :delete, class: "dark-input" %>
+        <%= link_to "Back to decks", decks_path, html_options = { class: "sidebar-link-button-dark" } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-sidebar">
+    <div class="padding-container">
+      <ul>
+        <%= render @deck.cards %>
+      </ul>
+    </div>
+  </div>
+
+</main>

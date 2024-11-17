@@ -1,0 +1,22 @@
+<%= turbo_frame_tag "card_#{form.index}" do %>
+  <li style="width:100%;list-style: none;">
+    <%= form.hidden_field :id %>
+
+    <div style="display: inline-block">
+    <%= form.label :term %>
+    <%= form.text_field :term, class: "light-text-input", style: "width:200px;" %>
+    </div>
+
+    <div style="display: inline-block">
+    <%= form.label :definition %>
+    <%= form.text_field :definition, class: "light-text-input", style: "width:300px;" %>
+    </div>
+
+    <%= form.submit "Delete",
+                    formaction: card_path(form.index, form.object.id),
+                    formmethod: :delete,
+                    formnovalidate: true,
+                    data: { turbo_frame: "card_#{form.index}" },
+                    class: "light-input" %>
+  </li>
+<% end %>
